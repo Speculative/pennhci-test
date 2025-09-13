@@ -4,14 +4,13 @@ import people from "../data/people.json";
 ---
 
 <Base title="People">
-  <section class="content-width" style="margin-top: 3rem;">
-    <h2 class="navy lowercase">People</h2>
-    <p class="f-large dark-gray">Meet the members of Penn HCI.</p>
+  <section class="people-page">
+    <div class="people-page__container content-width">
+      <h2 class="people-page__title">People</h2>
+      <p class="people-page__subtitle">Meet the members of Penn HCI.</p>
+    </div>
 
-    <div
-      class="people-cards flex-row"
-      style="flex-wrap: wrap; gap: 30px; margin-top: 3rem; padding-bottom: 3rem;"
-    >
+    <div class="people-page__cards content-width">
       {
         people.map((person) => (
           <div class="profile-card">

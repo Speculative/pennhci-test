@@ -1,116 +1,139 @@
-header {
+.home-hero {
   margin-top: 50px;
   position: relative;
   min-height: calc(100vh - 250px);
-}
 
-.upenn {
-  margin-top: 1.5rem;
-  margin-left: 0.5rem;
-}
-
-.hero {
-  line-height: 1;
-}
-
-.shapes {
-  position: absolute;
-  top: 10px;
-  right: 0;
-  height: 300px;
-
-  div {
-    position: absolute;
-    transition:
-      top 0.5s ease-out,
-      right 0.5s ease-out,
-      bottom 0.5s ease-out;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-}
-
-.dots-small {
-  height: 73px;
-  width: 60px;
-  right: 130px;
-  top: 20px;
-}
-
-.dots-large {
-  height: 130px;
-  width: 85px;
-  right: -40px;
-  top: 190px;
-}
-
-.triangle-small {
-  height: 151px;
-  width: 175px;
-  right: -80px;
-  top: -20px;
-}
-
-.triangle-large {
-  height: 366px;
-  width: 423px;
-  right: -110px;
-  top: 0;
-}
-
-.shapes:hover {
-  .dots-small {
-    right: 170px;
+  &__container {
+    position: relative;
   }
 
-  .dots-large {
-    top: 150px;
-    right: -20px;
+  &__upenn {
+    margin-top: 1.5rem;
+    margin-left: 0.5rem;
+    color: var(--gray);
+    font-size: 1.5rem;
+    text-transform: uppercase;
   }
 
-  .triangle-small {
-    top: -50px;
-    right: -120px;
+  &__title {
+    line-height: 1;
+    text-transform: lowercase;
   }
 
-  .triangle-large {
-    top: 60px;
+  &__subtitle {
+    color: var(--dark-gray);
+    font-size: 1.5rem;
+  }
+
+  /* &__shapes moved below element rules to satisfy stylelint ordering */
+
+  &__dots--small {
+    height: 73px;
+    width: 60px;
+    right: 130px;
+    top: 20px;
+  }
+
+  &__dots--large {
+    height: 130px;
+    width: 85px;
+    right: -40px;
+    top: 190px;
+  }
+
+  &__triangle--small {
+    height: 151px;
+    width: 175px;
     right: -80px;
+    top: -20px;
+  }
+
+  &__triangle--large {
+    height: 366px;
+    width: 423px;
+    right: -110px;
+    top: 0;
+  }
+
+  &__shapes {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    height: 300px;
+
+    div {
+      position: absolute;
+      transition:
+        top 0.5s ease-out,
+        right 0.5s ease-out,
+        bottom 0.5s ease-out;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      .home-hero__dots--small {
+        right: 170px;
+      }
+
+      .home-hero__dots--large {
+        top: 150px;
+        right: -20px;
+      }
+
+      .home-hero__triangle--small {
+        top: -50px;
+        right: -120px;
+      }
+
+      .home-hero__triangle--large {
+        top: 60px;
+        right: -80px;
+      }
+    }
   }
 }
+
+/* Nested above under .home-hero */
 
 .scroll-indicator {
   margin-bottom: 20px;
   color: var(--gray);
   font-weight: 700;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 
-.scroll-arrow {
-  height: 20px;
-  width: 34px;
+  &__arrow {
+    height: 20px;
+    width: 34px;
+  }
 }
 
 .people {
   background: linear-gradient(#fff 0, #fbd3de 5%, #ee3d6e 20%);
-}
 
-.people-cards {
-  flex-wrap: wrap;
+  &__cards {
+    display: flex;
+    flex-flow: row wrap;
 
-  /* row-gap combined into gap below per stylelint rule */
-  gap: 30px;
-  margin-top: 3rem;
-  padding-bottom: 3rem;
-}
+    /* row-gap combined into gap below per stylelint rule */
+    gap: 30px;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+  }
 
-.divider {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
+  &__title {
+    color: var(--navy);
+    text-transform: lowercase;
+  }
 
-.divider hr {
-  border-color: white;
-  background-color: white;
+  &__subtitle {
+    font-size: 1.5rem;
+  }
 }
 
 .news {
@@ -122,8 +145,23 @@ header {
     #46a29b 70%,
     #4a72b7 100%
   );
-}
 
-.news-cards {
-  padding-bottom: 25rem;
+  &__divider {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    hr {
+      border-color: white;
+      background-color: white;
+    }
+  }
+
+  &__title {
+    color: var(--white);
+    text-transform: lowercase;
+  }
+
+  &__cards {
+    padding-bottom: 25rem;
+  }
 }

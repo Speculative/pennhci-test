@@ -191,3 +191,54 @@ hr {
   border: none;
   background-color: #000;
 }
+
+/* People page */
+.people-page__container {
+  margin-top: 3rem;
+}
+
+.people-page__title {
+  color: var(--navy);
+  text-transform: lowercase;
+}
+
+.people-page__subtitle {
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+}
+
+.people-page__cards {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 30px;
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Publications page */
+.publications-page__container {
+  margin-top: 3rem;
+}
+
+.publications-page__title {
+  color: var(--navy);
+  text-transform: lowercase;
+}
+
+.publications-page__subtitle {
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+}
+
+.publications-page__list {
+  margin-top: 2rem;
+}
+
+.publications-page__item {
+  margin-bottom: 1.25rem;
+}
+
+/* Courses page */
+.courses-page__container {
+  margin-top: 3rem;
+}

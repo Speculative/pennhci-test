@@ -16,9 +16,9 @@
 - **Current codebase highlights**:
   - Layout: `src/layouts/Base.astro`
   - Home: `src/pages/index.astro`
-  - Styles: `src/base.css`, `src/index.css`
+  - Styles: `src/styles/global.scss`, `src/styles/index.scss`
   - Assets: `public/` (including `public/people/*` images)
-  - Data: `src/data/people.json` (existing). Publications/courses data not yet present.
+  - Data: `src/data/people.json`, `src/data/publications.json`
 - **Constraints**: Static site (no server). Host on GitHub Pages.
 - **Navigation**: Should include links to `/`, `/people`, `/publications`, `/courses`.
 
@@ -32,13 +32,20 @@
 - **Index previews**: Show a small subset (e.g., top 3–6) for People/Publications with "View all" links.
 - **Deployment**: Configure `astro.config.mjs` (`site` and `base` if needed) for GitHub Pages. Add a GitHub Actions workflow when ready.
 
+- **CSS naming (BEM) & SCSS usage**:
+  - Use BEM for all new and refactored styles: `block`, `block__element`, `block__element--modifier`.
+  - High-level structural elements (sections, headers, unique containers) should have a single block class.
+  - Utility classes (e.g., `content-width`, color/text utilities) are fine on minor inline elements.
+  - Nest SCSS rules under their block using `&__element` and `&--modifier` for readability and scoping.
+
+- **Conventional Commits**:
+  - Use one-line Conventional Commits: `<type>[: scope]: <subject>` (lowercase, imperative).
+  - Examples: `build: cursor & lint setup`, `feat(home): BEM refactor`, `docs: add BEM guidelines to project.md`.
+  - Common types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`.
+
 ### Open tasks
 
-- [ ] Create new pages and routes: `/people`, `/publications`, `/courses` (Astro files)
-- [ ] Update navigation in `src/layouts/Base.astro` to include the four pages
-- [ ] Keep publications data in `src/data/publications.json`
-- [ ] Implement page templates for People, Publications, and Courses
-- [ ] Update `src/pages/index.astro` with News section and previews + "View all" links
+- [ ] Update `src/pages/index.astro` with People/Publications previews and "View all" links
 - [ ] Configure repo for GitHub Pages deployment (Astro `site`/`base`; add CI workflow)
 - [ ] Test locally and validate on GitHub Pages
 
@@ -55,6 +62,9 @@
 - [x] Add placeholder data: `publications.json`, `courses.json` — 2025-09-13
 - [x] Consolidate styles to SCSS (`global.scss`, `index.scss`) — 2025-09-13
 
+- [x] Refactor site styles to BEM; nest SCSS under blocks — 2025-09-13
+- [x] Update homepage, People, Publications, Courses to BEM classes — 2025-09-13
+
 ### Changelog
 
 - 2025-09-13: Switched courses/news to single Markdown files and refactored pages.
@@ -63,3 +73,4 @@
 - 2025-09-13: Added `.cursor/rules/00-project-context.md` to auto-load project context.
 - 2025-09-13: Updated navigation and scaffolded People/Publications/Courses pages with data.
 - 2025-09-13: Consolidated styles, replaced inline styles with SCSS imports.
+- 2025-09-13: Adopted BEM naming and SCSS nesting; refactored pages and homepage hero.

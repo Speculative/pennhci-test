@@ -12,46 +12,50 @@ import scrollArrow from "../assets/scroll_arrow.svg";
 ---
 
 <Base>
-  <header class="content-width">
-    <h1 class="upenn gray f-large uppercase">University of Pennsylvania</h1>
-    <h1 class="hero lowercase">
-      <span class="denim">Human</span><br /><span class="red">Computer</span><br
-      /><span class="navy">Interaction</span>
-    </h1>
-    <p class="dark-gray f-large">
-      Welcome to Penn HCI! Located in the University of Pennsylvania’s Computer
-      and Information Science Department, our group studies a range of topics in
-      Human-Computer Interaction with the goal of understanding, designing,
-      engineering, and improving technologies to make a positive impact on
-      individuals and communities.
-    </p>
-    <div class="shapes">
-      <div class="dots-small"><img src={dotsSmall.src} /></div>
-      <div class="dots-large"><img src={dotsLarge.src} /></div>
-      <div class="triangle-small"><img src={triangleSmall.src} /></div>
-      <div class="triangle-large"><img src={triangleLarge.src} /></div>
+  <header class="home-hero">
+    <div class="home-hero__container content-width">
+      <h1 class="home-hero__upenn">University of Pennsylvania</h1>
+      <h1 class="home-hero__title">
+        <span class="denim">Human</span><br /><span class="red">Computer</span
+        ><br /><span class="navy">Interaction</span>
+      </h1>
+      <p class="home-hero__subtitle">
+        Welcome to Penn HCI! Located in the University of Pennsylvania’s
+        Computer and Information Science Department, our group studies a range
+        of topics in Human-Computer Interaction with the goal of understanding,
+        designing, engineering, and improving technologies to make a positive
+        impact on individuals and communities.
+      </p>
+      <div class="home-hero__shapes">
+        <div class="home-hero__dots--small"><img src={dotsSmall.src} /></div>
+        <div class="home-hero__dots--large"><img src={dotsLarge.src} /></div>
+        <div class="home-hero__triangle--small">
+          <img src={triangleSmall.src} />
+        </div>
+        <div class="home-hero__triangle--large">
+          <img src={triangleLarge.src} />
+        </div>
+      </div>
     </div>
   </header>
 
-  <div
-    class="scroll-indicator flex-col align-center justify-center margin-center"
-  >
+  <div class="scroll-indicator">
     scroll
-    <div class="scroll-arrow"><img src={scrollArrow.src} /></div>
+    <div class="scroll-indicator__arrow"><img src={scrollArrow.src} /></div>
   </div>
 
   <hr class="content-width" />
 
   <section class="people">
     <div class="content-width">
-      <h2 class="navy lowercase">People</h2>
-      <p class="f-large">
+      <h2 class="people__title">People</h2>
+      <p class="people__subtitle">
         Penn HCI is founded and led by Assistant Professors Andrew Head and
         Danaé Metaxa.
       </p>
     </div>
 
-    <div class="people-cards content-width flex-row">
+    <div class="people__cards content-width">
       {
         people.map((person) => (
           <div class="profile-card">
@@ -69,15 +73,15 @@ import scrollArrow from "../assets/scroll_arrow.svg";
   </section>
 
   <section class="news">
-    <div class="content-width divider">
-      <hr class="white" />
+    <div class="news__divider content-width">
+      <hr />
     </div>
 
     <div class="content-width">
-      <h2 class="white lowercase">News</h2>
+      <h2 class="news__title">News</h2>
     </div>
 
-    <div class="news-cards content-width">
+    <div class="news__cards content-width">
       <NewsContent />
     </div>
   </section>

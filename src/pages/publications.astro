@@ -4,14 +4,18 @@ import publications from "../data/publications.json";
 ---
 
 <Base title="Publications">
-  <section class="content-width" style="margin-top: 3rem;">
-    <h2 class="navy lowercase">Publications</h2>
-    <p class="f-large dark-gray">Selected publications from Penn HCI.</p>
+  <section class="publications-page">
+    <div class="publications-page__container content-width">
+      <h2 class="publications-page__title">Publications</h2>
+      <p class="publications-page__subtitle">
+        Selected publications from Penn HCI.
+      </p>
+    </div>
 
-    <div style="margin-top: 2rem;">
+    <div class="publications-page__list content-width">
       {
         publications.map((pub) => (
-          <div style="margin-bottom: 1.25rem;">
+          <div class="publications-page__item">
             <div class="f-large">{pub.title}</div>
             <div class="dark-gray">{pub.authors}</div>
             <div class="gray">
