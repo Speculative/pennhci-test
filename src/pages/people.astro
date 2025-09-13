@@ -7,17 +7,110 @@ import peopleByCategory from "../data/people.json";
   <section class="people-page">
     <div class="people-page__container content-width">
       <h2 class="people-page__title">People</h2>
-      <p class="people-page__subtitle">Meet the members of Penn HCI.</p>
     </div>
 
+    <div class="content-width">
+      <h3 class="people-page__group-title">Faculty</h3>
+    </div>
     <div class="people-page__cards content-width">
       {
-        [
-          ...peopleByCategory.pis,
-          ...peopleByCategory.phds,
-          ...peopleByCategory.students,
-          ...peopleByCategory.collaborators,
-        ].map((person) => (
+        peopleByCategory.pis.map((person) => (
+          <a
+            class="profile-card"
+            href={person.website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="headshot" src={person.picture} />
+            <div class="card-body flex-grow">
+              <h4 class="f-large">{person.name}</h4>
+              <p>
+                {person.role}, {person.affiliation}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="content-width">
+      <h3 class="people-page__group-title">Postdocs</h3>
+    </div>
+    <div class="people-page__cards content-width">
+      {
+        peopleByCategory.postdocs.map((person) => (
+          <a
+            class="profile-card"
+            href={person.website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="headshot" src={person.picture} />
+            <div class="card-body flex-grow">
+              <h4 class="f-large">{person.name}</h4>
+              <p>
+                {person.role}, {person.affiliation}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="content-width">
+      <h3 class="people-page__group-title">PhD Students</h3>
+    </div>
+    <div class="people-page__cards content-width">
+      {
+        peopleByCategory.phds.map((person) => (
+          <a
+            class="profile-card"
+            href={person.website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="headshot" src={person.picture} />
+            <div class="card-body flex-grow">
+              <h4 class="f-large">{person.name}</h4>
+              <p>
+                {person.role}, {person.affiliation}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="content-width">
+      <h3 class="people-page__group-title">Students</h3>
+    </div>
+    <div class="people-page__cards content-width">
+      {
+        peopleByCategory.students.map((person) => (
+          <a
+            class="profile-card"
+            href={person.website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="headshot" src={person.picture} />
+            <div class="card-body flex-grow">
+              <h4 class="f-large">{person.name}</h4>
+              <p>
+                {person.role}, {person.affiliation}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="content-width">
+      <h3 class="people-page__group-title">Collaborators</h3>
+    </div>
+    <div class="people-page__cards content-width">
+      {
+        peopleByCategory.collaborators.map((person) => (
           <a
             class="profile-card"
             href={person.website}

@@ -90,6 +90,28 @@ import triangleLarge from "../assets/biggrntri.svg";
         }
       </div>
 
+      <h3 class="people__subheading">Postdocs</h3>
+      <div class="people__cards">
+        {
+          peopleByCategory.postdocs.map((person) => (
+            <a
+              class="profile-card"
+              href={person.website}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img class="headshot" src={person.picture} />
+              <div class="card-body flex-grow">
+                <h4 class="f-large">{person.name}</h4>
+                <p>
+                  {person.role}, {person.affiliation}
+                </p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+
       <h3 class="people__subheading">PhD Students</h3>
       <div class="people__cards">
         {
