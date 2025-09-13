@@ -1,62 +1,102 @@
-[
-  {
-    "name": "Andrew Head",
-    "role": "Assistant Professor",
-    "affiliation": "University of Pennsylvania",
-    "picture": "/people/andrew_head.png"
-  },
-  {
-    "name": "Danaé Metaxa",
-    "role": "Assistant Professor",
-    "affiliation": "University of Pennsylvania",
-    "picture": "/people/danae_metaxa.png"
-  },
-  {
-    "name": "Alyssa Hwang",
-    "role": "PhD Student",
-    "affiliation": "University of Pennsylvania",
-    "picture": "/people/alyssa_hwang.png"
-  },
-  {
-    "name": "Jessica Shi",
-    "role": "PhD Student",
-    "affiliation": "University of Pennsylvania",
-    "picture": "/people/jessica_shi.jpg"
-  },
-  {
-    "name": "Princess Sampson",
-    "role": "PhD Student",
-    "affiliation": "University of Pennsylvania",
-    "picture": "/people/princess_sampson.png"
-  },
-  {
-    "name": "Ro Encarnacion",
-    "role": "PhD Student",
-    "affiliation": "University of Pennsylvania",
-    "picture": "/people/ro_encarnacion.jpeg"
-  },
-  {
-    "name": "Hita Kambhamettu",
-    "role": "PhD Student",
-    "affiliation": "University of Pennsylvania",
-    "picture": "/people/hita_kambhamettu.png"
-  },
-  {
-    "name": "Litao Yan",
-    "role": "PhD Student",
-    "affiliation": "University of Pennsylvania",
-    "picture": "/people/litao_yan.png"
-  },
-  {
-    "name": "Stephanie Wang",
-    "role": "PhD Student",
-    "affiliation": "University of Pennsylvania",
-    "picture": "/people/stephanie_wang.jpeg"
-  },
-  {
-    "name": "Jeff Tao",
-    "role": "PhD Student",
-    "affiliation": "University of Pennsylvania",
-    "picture": "/people/jeff_tao.jpg"
-  }
-]
+{
+  "pis": [
+    {
+      "name": "Andrew Head",
+      "role": "Assistant Professor",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/andrew_head.png",
+      "website": "https://andrewhead.info/"
+    },
+    {
+      "name": "Danaé Metaxa",
+      "role": "Assistant Professor",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/danae_metaxa.png",
+      "website": "https://metaxa.net/"
+    }
+  ],
+  "postdocs": [
+    {
+      "name": "Emma Lurie",
+      "role": "Postdoctoral Researcher",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/emma_lurie.png",
+      "website": "https://emmalurie.github.io/"
+    }
+  ],
+  "phds": [
+    {
+      "name": "Alyssa Hwang",
+      "role": "PhD Student",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/alyssa_hwang.png",
+      "website": "https://alyssahwang.com/"
+    },
+    {
+      "name": "Jessica Shi",
+      "role": "PhD Student",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/jessica_shi.jpg",
+      "website": "https://jwshii.github.io/"
+    },
+    {
+      "name": "Princess Sampson",
+      "role": "PhD Student",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/princess_sampson.png",
+      "website": "https://www.linkedin.com/in/pdotsamp/"
+    },
+    {
+      "name": "Ro Encarnacion",
+      "role": "PhD Student",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/ro_encarnacion.jpeg",
+      "website": "https://roencarnacion.com/"
+    },
+    {
+      "name": "Hita Kambhamettu",
+      "role": "PhD Student",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/hita_kambhamettu.png",
+      "website": "https://hita-k.github.io/"
+    },
+    {
+      "name": "Litao Yan",
+      "role": "PhD Student",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/litao_yan.png",
+      "website": "https://yanlitao.github.io/"
+    },
+    {
+      "name": "Stephanie Wang",
+      "role": "PhD Student",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/stephanie_wang.jpeg",
+      "website": "https://steph-w.github.io/"
+    },
+    {
+      "name": "Jeff Tao",
+      "role": "PhD Student",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/jeff_tao.jpg",
+      "website": "https://www.speculative.tech/"
+    },
+    {
+      "name": "Mialy Rasetarinera",
+      "role": "PhD Student",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/mialy_rasetarinera.jpg",
+      "website": "https://mialynr.github.io/"
+    },
+    {
+      "name": "Xiaorui Liu",
+      "role": "PhD Student",
+      "affiliation": "University of Pennsylvania",
+      "picture": "/people/xiaorui_liu.jpg",
+      "website": "https://www.linkedin.com/in/xiaorui-liu-7993a826b/"
+    }
+  ],
+  "alumni": [],
+  "students": [],
+  "collaborators": []
+}

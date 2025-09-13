@@ -15,7 +15,8 @@
     "lint:css": "stylelint \"src/**/*.{css,scss,astro}\""
   },
   "dependencies": {
-    "astro": "^5.13.5"
+    "astro": "^5.13.5",
+    "marked": "^14.1.4"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.43.0",

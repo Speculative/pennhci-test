@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import people from "../data/people.json";
+import peopleByCategory from "../data/people.json";
 ---
 
 <Base title="People">
@@ -12,8 +12,18 @@ import people from "../data/people.json";
 
     <div class="people-page__cards content-width">
       {
-        people.map((person) => (
-          <div class="profile-card">
+        [
+          ...peopleByCategory.pis,
+          ...peopleByCategory.phds,
+          ...peopleByCategory.students,
+          ...peopleByCategory.collaborators,
+        ].map((person) => (
+          <a
+            class="profile-card"
+            href={person.website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img class="headshot" src={person.picture} />
             <div class="card-body flex-grow">
               <h4 class="f-large">{person.name}</h4>
@@ -21,7 +31,7 @@ import people from "../data/people.json";
                 {person.role}, {person.affiliation}
               </p>
             </div>
-          </div>
+          </a>
         ))
       }
     </div>

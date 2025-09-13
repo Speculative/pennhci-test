@@ -1,5 +1,2 @@
----
-title: News
----
-
-- 2025-09-01: Penn HCI website launched — our new lab website is live with people, publications, and courses.
+- September 2025: This is where news would go!
+- September 2025: New website!

@@ -4,6 +4,7 @@
   --red: #ee3d6e;
   --navy: #1c2b56;
   --gray: rgb(167 186 185);
+  --light-gray: #e5e7eb;
   --dark-gray: #484848;
   --white: #fff;
 }
@@ -125,9 +126,10 @@ nav {
   margin-left: 20px;
   padding: 0.5rem;
   color: rgb(0 0 0 / 50%);
+  transition: color 150ms ease;
 
   &:hover {
-    color: rgb(0 0 0 / 70%);
+    color: var(--denim);
   }
 }
 
@@ -159,24 +161,37 @@ nav {
 }
 
 .profile-card {
-  border: 1px solid var(--white);
+  border: 1px solid var(--light-gray);
   border-radius: 12px;
-  background-color: transparent;
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--dark-gray);
   padding: 0;
   max-width: 23%;
+  box-shadow:
+    0 2px 8px rgb(0 0 0 / 8%),
+    0 1px 3px rgb(0 0 0 / 6%);
+  transition: box-shadow 150ms ease;
+  display: block;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow:
+      0 6px 20px rgb(0 0 0 / 12%),
+      0 3px 8px rgb(0 0 0 / 10%);
+  }
 
   .headshot {
     aspect-ratio: 4 / 5;
     object-fit: cover;
     width: 100%;
+    display: block;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
   }
 
   .card-body {
-    height: 150px;
-    padding: 1rem 1.25rem;
+    height: auto;
+    padding: 1rem;
   }
 }
 
@@ -187,9 +202,10 @@ main {
 }
 
 hr {
-  height: 1px;
+  height: 3px;
   border: none;
-  background-color: #000;
+  background-color: var(--light-gray);
+  border-radius: 9999px;
 }
 
 /* People page */

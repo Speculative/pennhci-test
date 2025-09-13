@@ -36,7 +36,9 @@
   - Use BEM for all new and refactored styles: `block`, `block__element`, `block__element--modifier`.
   - High-level structural elements (sections, headers, unique containers) should have a single block class.
   - Utility classes (e.g., `content-width`, color/text utilities) are fine on minor inline elements.
-  - Nest SCSS rules under their block using `&__element` and `&--modifier` for readability and scoping.
+  - Always nest SCSS rules under their block using `&__element` and `&--modifier`.
+  - Mirror the HTML hierarchy in nesting: block → elements → modifiers; avoid flat, top-level selectors for elements.
+  - Prefer rem-based sizing and spacing for consistency and scalability.
 
 - **Conventional Commits**:
   - Use one-line Conventional Commits: `<type>[: scope]: <subject>` (lowercase, imperative).
@@ -48,6 +50,23 @@
 - [ ] Update `src/pages/index.astro` with People/Publications previews and "View all" links
 - [ ] Configure repo for GitHub Pages deployment (Astro `site`/`base`; add CI workflow)
 - [ ] Test locally and validate on GitHub Pages
+- [ ] Redesign
+  - [ ] Remove background gradients
+  - [ ] Incorporate brand colors into headers/section separators
+  - [ ] Layout: denser first fold
+  - [ ] Layout: news first?
+- [ ] Reusable configurable people list
+  - [ ] Filtered for main page
+  - [ ] Unfiltered for /people
+- [ ] Reusable configurable publication list
+  - [ ] Filtered for main page
+  - [ ] Unfiltered for /publications
+
+- [ ] Mobile breakpoints & responsive styles
+  - [ ] Hero: scale titles/subtitle and reduce margins
+  - [ ] People: 2-up and 1-up cards with comfortable spacing
+  - [ ] News: stack date above content and tighten padding
+  - [ ] Nav: wrap or collapse links on small screens
 
 ### Completed tasks
 

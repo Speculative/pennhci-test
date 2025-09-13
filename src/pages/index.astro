@@ -1,14 +1,19 @@
 ---
 import Base from "../layouts/Base.astro";
-import people from "../data/people.json";
-import NewsContent from "../content/news.md";
+import peopleByCategory from "../data/people.json";
+import newsItems from "../data/news.json";
+import { marked } from "marked";
+
+const renderedNews = newsItems.map((item) => ({
+  ...item,
+  html: marked.parse(item.content),
+}));
 import "../styles/index.scss";
 
 import dotsSmall from "../assets/3x4bluedots.svg";
 import dotsLarge from "../assets/4x7grydots.svg";
 import triangleSmall from "../assets/lilredtriangle.svg";
 import triangleLarge from "../assets/biggrntri.svg";
-import scrollArrow from "../assets/scroll_arrow.svg";
 ---
 
 <Base>
@@ -38,51 +43,74 @@ import scrollArrow from "../assets/scroll_arrow.svg";
       </div>
     </div>
   </header>
-
-  <div class="scroll-indicator">
-    scroll
-    <div class="scroll-indicator__arrow"><img src={scrollArrow.src} /></div>
-  </div>
-
-  <hr class="content-width" />
-
-  <section class="people">
-    <div class="content-width">
-      <h2 class="people__title">People</h2>
-      <p class="people__subtitle">
-        Penn HCI is founded and led by Assistant Professors Andrew Head and
-        Danaé Metaxa.
-      </p>
+  <section class="news">
+    <div class="news__divider content-width">
+      <hr />
     </div>
 
-    <div class="people__cards content-width">
+    <div class="news__list content-width">
+      <h2 class="news__title">News</h2>
       {
-        people.map((person) => (
-          <div class="profile-card">
-            <img class="headshot" src={person.picture} />
-            <div class="card-body flex-grow">
-              <h4 class="f-large">{person.name}</h4>
-              <p>
-                {person.role}, {person.affiliation}
-              </p>
-            </div>
+        renderedNews.map((item) => (
+          <div class="news__item">
+            <div class="news__item-date">{item.date}</div>
+            <div class="news__item-content" set:html={item.html} />
           </div>
         ))
       }
     </div>
   </section>
 
-  <section class="news">
-    <div class="news__divider content-width">
-      <hr />
-    </div>
+  <div class="content-width">
+    <hr />
+  </div>
 
+  <section class="people">
     <div class="content-width">
-      <h2 class="news__title">News</h2>
-    </div>
+      <h2 class="people__title">People</h2>
+      <h3 class="people__subheading">Faculty</h3>
+      <div class="people__cards">
+        {
+          peopleByCategory.pis.map((person) => (
+            <a
+              class="profile-card"
+              href={person.website}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img class="headshot" src={person.picture} />
+              <div class="card-body flex-grow">
+                <h4 class="f-large">{person.name}</h4>
+                <p>
+                  {person.role}, {person.affiliation}
+                </p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
 
-    <div class="news__cards content-width">
-      <NewsContent />
+      <h3 class="people__subheading">PhD Students</h3>
+      <div class="people__cards">
+        {
+          peopleByCategory.phds.map((person) => (
+            <a
+              class="profile-card"
+              href={person.website}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img class="headshot" src={person.picture} />
+              <div class="card-body flex-grow">
+                <h4 class="f-large">{person.name}</h4>
+                <p>
+                  {person.role}, {person.affiliation}
+                </p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
     </div>
   </section>
 </Base>
