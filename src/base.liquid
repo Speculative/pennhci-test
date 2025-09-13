@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>
+      {% if title %}{{ title }} - PENN HCI{% else %}PENN HCI{% endif %}
+    </title>
+    <link rel="icon" href="favicon_300.png" type="image/png" />
+    <style>
+      {% include "./base.css" %}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>{% getBundle "css" %}</style>
+  </head>
+  <body>
+    <nav>
+      <div class="content-width flex-row align-center space-between">
+        <a class="nav-logo" href="/"><img src="/logo.svg" alt="PENN HCI Logo" /></a>
+        <div class="flex-row space-between w-full">
+          <div class="nav-left">
+            <a class="nav-link" href="/people">people</a>
+            <a class="nav-link" href="/news-events">news &amp; events</a>
+            <a class="nav-link" href="/publications">publications</a>
+            <a class="nav-link" href="/courses">courses</a>
+            <a class="nav-link" href="/connect">connect</a>
+          </div>
+          <div class="nav-right">
+            <a class="nav-join" href="/connect">join</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      {{ content }}
+    </main>
+  </body>
+</html>

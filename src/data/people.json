@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Andrew Head",
+    "role": "Assistant Professor",
+    "affiliation": "University of Pennsylvania",
+    "picture": "/people/andrew_head.png"
+  },
+  {
+    "name": "Danaé Metaxa",
+    "role": "Assistant Professor",
+    "affiliation": "University of Pennsylvania",
+    "picture": "/people/danae_metaxa.png"
+  },
+  {
+    "name": "Alyssa Hwang",
+    "role": "PhD Student",
+    "affiliation": "University of Pennsylvania",
+    "picture": "/people/alyssa_hwang.png"
+  },
+  {
+    "name": "Jessica Shi",
+    "role": "PhD Student",
+    "affiliation": "University of Pennsylvania",
+    "picture": "/people/jessica_shi.jpg"
+  },
+  {
+    "name": "Princess Sampson",
+    "role": "PhD Student",
+    "affiliation": "University of Pennsylvania",
+    "picture": "/people/princess_sampson.png"
+  },
+  {
+    "name": "Ro Encarnacion",
+    "role": "PhD Student",
+    "affiliation": "University of Pennsylvania",
+    "picture": "/people/ro_encarnacion.jpeg"
+  },
+  {
+    "name": "Hita Kambhamettu",
+    "role": "PhD Student",
+    "affiliation": "University of Pennsylvania",
+    "picture": "/people/hita_kambhamettu.png"
+  },
+  {
+    "name": "Litao Yan",
+    "role": "PhD Student",
+    "affiliation": "University of Pennsylvania",
+    "picture": "/people/litao_yan.png"
+  },
+  {
+    "name": "Stephanie Wang",
+    "role": "PhD Student",
+    "affiliation": "University of Pennsylvania",
+    "picture": "/people/stephanie_wang.jpeg"
+  },
+  {
+    "name": "Jeff Tao",
+    "role": "PhD Student",
+    "affiliation": "University of Pennsylvania",
+    "picture": "/people/jeff_tao.jpg"
+  }
+]
