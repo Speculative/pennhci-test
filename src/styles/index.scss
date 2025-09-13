@@ -1,0 +1,129 @@
+header {
+  margin-top: 50px;
+  position: relative;
+  min-height: calc(100vh - 250px);
+}
+
+.upenn {
+  margin-top: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.hero {
+  line-height: 1;
+}
+
+.shapes {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  height: 300px;
+
+  div {
+    position: absolute;
+    transition:
+      top 0.5s ease-out,
+      right 0.5s ease-out,
+      bottom 0.5s ease-out;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.dots-small {
+  height: 73px;
+  width: 60px;
+  right: 130px;
+  top: 20px;
+}
+
+.dots-large {
+  height: 130px;
+  width: 85px;
+  right: -40px;
+  top: 190px;
+}
+
+.triangle-small {
+  height: 151px;
+  width: 175px;
+  right: -80px;
+  top: -20px;
+}
+
+.triangle-large {
+  height: 366px;
+  width: 423px;
+  right: -110px;
+  top: 0;
+}
+
+.shapes:hover {
+  .dots-small {
+    right: 170px;
+  }
+
+  .dots-large {
+    top: 150px;
+    right: -20px;
+  }
+
+  .triangle-small {
+    top: -50px;
+    right: -120px;
+  }
+
+  .triangle-large {
+    top: 60px;
+    right: -80px;
+  }
+}
+
+.scroll-indicator {
+  margin-bottom: 20px;
+  color: var(--gray);
+  font-weight: 700;
+}
+
+.scroll-arrow {
+  height: 20px;
+  width: 34px;
+}
+
+.people {
+  background: linear-gradient(#fff 0, #fbd3de 5%, #ee3d6e 20%);
+}
+
+.people-cards {
+  flex-wrap: wrap;
+
+  /* row-gap combined into gap below per stylelint rule */
+  gap: 30px;
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.divider {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.divider hr {
+  border-color: white;
+  background-color: white;
+}
+
+.news {
+  background: linear-gradient(
+    #ee3d6e,
+    #ad518a 3%,
+    #4a72b7 10%,
+    #4884ab 40%,
+    #46a29b 70%,
+    #4a72b7 100%
+  );
+}
+
+.news-cards {
+  padding-bottom: 25rem;
+}

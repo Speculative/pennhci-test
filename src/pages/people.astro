@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import people from "../data/people.json";
+---
+
+<Base title="People">
+  <section class="content-width" style="margin-top: 3rem;">
+    <h2 class="navy lowercase">People</h2>
+    <p class="f-large dark-gray">Meet the members of Penn HCI.</p>
+
+    <div
+      class="people-cards flex-row"
+      style="flex-wrap: wrap; gap: 30px; margin-top: 3rem; padding-bottom: 3rem;"
+    >
+      {
+        people.map((person) => (
+          <div class="profile-card">
+            <img class="headshot" src={person.picture} />
+            <div class="card-body flex-grow">
+              <h4 class="f-large">{person.name}</h4>
+              <p>
+                {person.role}, {person.affiliation}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Base>

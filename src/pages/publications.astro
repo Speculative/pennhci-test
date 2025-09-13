@@ -1,0 +1,32 @@
+---
+import Base from "../layouts/Base.astro";
+import publications from "../data/publications.json";
+---
+
+<Base title="Publications">
+  <section class="content-width" style="margin-top: 3rem;">
+    <h2 class="navy lowercase">Publications</h2>
+    <p class="f-large dark-gray">Selected publications from Penn HCI.</p>
+
+    <div style="margin-top: 2rem;">
+      {
+        publications.map((pub) => (
+          <div style="margin-bottom: 1.25rem;">
+            <div class="f-large">{pub.title}</div>
+            <div class="dark-gray">{pub.authors}</div>
+            <div class="gray">
+              {pub.venue} {pub.year}
+            </div>
+            {pub.url && (
+              <div>
+                <a class="nav-link" href={pub.url}>
+                  link
+                </a>
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Base>
