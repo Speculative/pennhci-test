@@ -40,11 +40,33 @@
   }
 
   &__pdf {
-    color: var(--gray);
+    color: var(--denim);
     text-decoration: underline;
 
     &:hover {
-      color: var(--denim);
+      color: var(--red);
+    }
+  }
+}
+
+@media (width <= 1023px) {
+  .publications-page__container {
+    margin-top: 1rem;
+  }
+
+  .publications-page__list {
+    margin-top: 0;
+  }
+
+  .publication {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    &__image {
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
     }
   }
 }
