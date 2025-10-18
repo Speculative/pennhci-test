@@ -29,15 +29,22 @@ const { title } = Astro.props;
   <body>
     <nav>
       <div class="content-width flex-row align-center space-between">
-        <a class="nav-logo" href="/"
+        <a class="nav-logo" href={`${import.meta.env.BASE_URL}/`}
           ><img src={logo.src} alt="Penn HCI Logo" /></a
         >
         <div class="flex-row space-between w-full">
           <div class="nav-left">
-            <a class="nav-link" href="/">home</a>
-            <a class="nav-link" href="/people">people</a>
-            <a class="nav-link" href="/publications">publications</a>
-            <a class="nav-link" href="/courses">courses</a>
+            <a class="nav-link" href={`${import.meta.env.BASE_URL}/`}>home</a>
+            <a class="nav-link" href={`${import.meta.env.BASE_URL}/people`}
+              >people</a
+            >
+            <a
+              class="nav-link"
+              href={`${import.meta.env.BASE_URL}/publications`}>publications</a
+            >
+            <a class="nav-link" href={`${import.meta.env.BASE_URL}/courses`}
+              >courses</a
+            >
           </div>
           <div class="nav-right"></div>
         </div>

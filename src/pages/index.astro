@@ -14,6 +14,14 @@ import dotsSmall from "../assets/3x4bluedots.svg";
 import dotsLarge from "../assets/4x7grydots.svg";
 import triangleSmall from "../assets/lilredtriangle.svg";
 import triangleLarge from "../assets/biggrntri.svg";
+
+const CATEGORY_NAMES = {
+  pis: "Faculty",
+  postdocs: "Postdocs",
+  phds: "PhD Students",
+  students: "Students",
+  collaborators: "Collaborators",
+};
 ---
 
 <Base>
@@ -68,71 +76,40 @@ import triangleLarge from "../assets/biggrntri.svg";
   <section class="people">
     <div class="content-width">
       <h2 class="people__title">People</h2>
-      <h3 class="people__subheading">Faculty</h3>
-      <div class="people__cards">
-        {
-          peopleByCategory.pis.map((person) => (
-            <a
-              class="profile-card"
-              href={person.website}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img class="headshot" src={person.picture} />
-              <div class="card-body flex-grow">
-                <h4 class="f-large">{person.name}</h4>
-                <p>
-                  {person.role}, {person.affiliation}
-                </p>
+      {
+        Object.entries(CATEGORY_NAMES)
+          .filter(([category, _]) =>
+            ["pis", "postdocs", "phds"].includes(category),
+          )
+          .map(([category, name]) => (
+            <>
+              <h3 class="people__subheading">{name}</h3>
+              <div class="people__cards">
+                {peopleByCategory[
+                  category as keyof typeof peopleByCategory
+                ].map((person) => (
+                  <a
+                    class="profile-card"
+                    href={person.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      class="headshot"
+                      src={`${import.meta.env.BASE_URL}${person.picture}`}
+                    />
+                    <div class="card-body flex-grow">
+                      <h4 class="f-large">{person.name}</h4>
+                      <p>
+                        {person.role}, {person.affiliation}
+                      </p>
+                    </div>
+                  </a>
+                ))}
               </div>
-            </a>
+            </>
           ))
-        }
-      </div>
-
-      <h3 class="people__subheading">Postdocs</h3>
-      <div class="people__cards">
-        {
-          peopleByCategory.postdocs.map((person) => (
-            <a
-              class="profile-card"
-              href={person.website}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img class="headshot" src={person.picture} />
-              <div class="card-body flex-grow">
-                <h4 class="f-large">{person.name}</h4>
-                <p>
-                  {person.role}, {person.affiliation}
-                </p>
-              </div>
-            </a>
-          ))
-        }
-      </div>
-
-      <h3 class="people__subheading">PhD Students</h3>
-      <div class="people__cards">
-        {
-          peopleByCategory.phds.map((person) => (
-            <a
-              class="profile-card"
-              href={person.website}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img class="headshot" src={person.picture} />
-              <div class="card-body flex-grow">
-                <h4 class="f-large">{person.name}</h4>
-                <p>
-                  {person.role}, {person.affiliation}
-                </p>
-              </div>
-            </a>
-          ))
-        }
-      </div>
+      }
     </div>
   </section>
 </Base>
