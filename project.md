@@ -84,6 +84,8 @@
 - [x] Refactor site styles to BEM; nest SCSS under blocks — 2025-09-13
 - [x] Update homepage, People, Publications, Courses to BEM classes — 2025-09-13
 
+- [x] Initial mobile responsive layout pass — 2025-10-18
+
 ### Changelog
 
 - 2025-09-13: Switched courses/news to single Markdown files and refactored pages.
@@ -93,3 +95,5 @@
 - 2025-09-13: Updated navigation and scaffolded People/Publications/Courses pages with data.
 - 2025-09-13: Consolidated styles, replaced inline styles with SCSS imports.
 - 2025-09-13: Adopted BEM naming and SCSS nesting; refactored pages and homepage hero.
+
+- 2025-10-18: Initial mobile responsive layout pass; added breakpoints and spacing tweaks in `src/styles/global.scss` and `src/styles/index.scss`; minor nav/header adjustments in `src/layouts/Base.astro`.
