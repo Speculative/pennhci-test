@@ -222,7 +222,7 @@ hr {
 }
 
 .people-page__title {
-  color: var(--navy);
+  color: var(--denim);
   text-transform: lowercase;
 }
 
@@ -246,31 +246,6 @@ hr {
   gap: 30px;
   margin-top: 3rem; /* page section spacing */
   padding-bottom: 3rem;
-}
-
-/* Ensure consistent card heights and image behavior */
-
-/* Publications page */
-.publications-page__container {
-  margin-top: 3rem;
-}
-
-.publications-page__title {
-  color: var(--navy);
-  text-transform: lowercase;
-}
-
-.publications-page__subtitle {
-  font-size: 1.5rem;
-  color: var(--dark-gray);
-}
-
-.publications-page__list {
-  margin-top: 2rem;
-}
-
-.publications-page__item {
-  margin-bottom: 1.25rem;
 }
 
 /* Courses page */

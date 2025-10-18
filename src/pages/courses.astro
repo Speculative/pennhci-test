@@ -1,11 +1,14 @@
 ---
 import Base from "../layouts/Base.astro";
 import CoursesContent from "../content/courses.md";
+
+import "../styles/courses.scss";
 ---
 
 <Base title="Courses">
   <section class="courses-page">
     <div class="courses-page__container content-width">
+      <h2 class="courses-page__title">Courses</h2>
       <CoursesContent />
     </div>
   </section>

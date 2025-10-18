@@ -1,0 +1,50 @@
+.publications-page__container {
+  margin-top: 3rem;
+}
+
+.publications-page__title {
+  color: var(--red);
+  text-transform: lowercase;
+}
+
+.publications-page__subtitle {
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+}
+
+.publications-page__list {
+  margin-top: 2rem;
+}
+
+.publication {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  &__image {
+    max-width: 15rem;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  &__pdf {
+    color: var(--gray);
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--denim);
+    }
+  }
+}

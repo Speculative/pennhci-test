@@ -26,8 +26,6 @@
     font-size: 1.5rem;
   }
 
-  /* &__shapes moved below element rules to satisfy stylelint ordering */
-
   &__dots--small {
     height: 73px;
     width: 60px;
@@ -95,25 +93,6 @@
   }
 }
 
-/* Nested above under .home-hero */
-
-.scroll-indicator {
-  margin-bottom: 20px;
-  color: var(--gray);
-  font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-
-  &__arrow {
-    height: 20px;
-    width: 34px;
-  }
-}
-
 /* Mobile overrides */
 @media (width <= 1023px) {
   .home-hero {
@@ -127,7 +106,7 @@
 
     &__title {
       line-height: 1.1;
-      font-size: 5rem;
+      font-size: 17vw;
     }
 
     &__subtitle {
@@ -176,19 +155,25 @@
   }
 
   .people {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
     &__subtitle {
       font-size: 1.125rem;
     }
   }
 
   .news {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
     &__item {
       padding: 0.5rem 0;
     }
   }
 }
 
-/* Hide decorative shapes on very small screens */
+/* Hide decorative shapes on mobile */
 @media (width <= 640px) {
   .home-hero {
     &__shapes {
@@ -203,7 +188,7 @@
   background: var(--white);
 
   &__title {
-    color: var(--navy);
+    color: var(--denim);
     text-transform: lowercase;
   }
 

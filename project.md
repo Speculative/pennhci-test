@@ -43,7 +43,8 @@
 - **Conventional Commits**:
   - Use one-line Conventional Commits: `<type>[: scope]: <subject>` (lowercase, imperative).
   - Examples: `build: cursor & lint setup`, `feat(home): BEM refactor`, `docs: add BEM guidelines to project.md`.
-  - Common types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`.
+  - Common types: `feat`, `fix`, `docs`, `style`, `refactor`, `build`, `ci`, `chore`, `content`.
+  - In particular, `content` should be used when adding/changing content (markdown, json, file, etc.) without changing the site source.
 
 ### Open tasks
 

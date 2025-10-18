@@ -1,33 +1,38 @@
 ---
 import Base from "../layouts/Base.astro";
 import publications from "../data/publications.json";
+
+import "../styles/publications.scss";
 ---
 
 <Base title="Publications">
   <section class="publications-page">
     <div class="publications-page__container content-width">
       <h2 class="publications-page__title">Publications</h2>
-      <p class="publications-page__subtitle">
-        Selected publications from Penn HCI.
-      </p>
     </div>
 
     <div class="publications-page__list content-width">
       {
         publications.map((pub) => (
-          <div class="publications-page__item">
-            <div class="f-large">{pub.title}</div>
-            <div class="dark-gray">{pub.authors}</div>
-            <div class="gray">
-              {pub.venue} {pub.year}
-            </div>
-            {pub.url && (
-              <div>
-                <a class="nav-link" href={pub.url}>
-                  link
-                </a>
-              </div>
+          <div class="publication">
+            {pub.image && (
+              <img
+                class="publication__image"
+                src={`${import.meta.env.BASE_URL}${pub.image}`}
+              />
             )}
+            <div class="publication__content">
+              <div class="publication__title">{pub.title}</div>
+              <div class="publication__authors">{pub.authors}</div>
+              <div class="publication__venue">{pub.venue}</div>
+              {pub.pdf && (
+                <div>
+                  <a class="publication__pdf" href={pub.pdf}>
+                    pdf
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         ))
       }

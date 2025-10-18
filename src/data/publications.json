@@ -1,9 +1,16 @@
 [
   {
-    "title": "Example Publication Title",
-    "authors": "First Author, Second Author",
-    "venue": "Conference Name",
-    "year": 2025,
-    "url": "https://example.com/paper"
+    "title": "FreeForm - Flexibly Augmenting Formulas with Synchronized Markup and Graphical Edits",
+    "authors": "Jeffrey Tao, Litao Yan, Jessica Shi, Mia Ginsberg, Andrew Head",
+    "venue": "CHI 2025",
+    "pdf": "./papers/chi25-freeform.pdf",
+    "image": "/papers/chi25-freeform.png"
+  },
+  {
+    "title": "Augmenting Scientific Papers with Just-in-Time, Position-Sensitive Definitions of Terms and Symbols",
+    "authors": "Andrew Head, Kyle Lo, Dongyeop Kang, Raymond Fok, Sam Skjonsberg, Daniel S. Weld, Marti A. Hearst",
+    "venue": "CHI 2021",
+    "pdf": "./papers/chi21-scholarphi.pdf",
+    "image": "/papers/chi21-scholarphi.png"
   }
 ]
