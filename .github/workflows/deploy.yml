@@ -1,4 +1,4 @@
-  name: Deploy GitHub Pages
+name: Deploy GitHub Pages
 
 # Controls when the workflow will run
 on:
