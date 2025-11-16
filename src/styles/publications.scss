@@ -122,3 +122,10 @@
     }
   }
 }
+
+/* Hide decorative shapes on mobile */
+@media (width <= 640px) {
+  .publications-page__shapes {
+    display: none;
+  }
+}
