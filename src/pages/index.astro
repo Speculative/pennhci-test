@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import PeopleSection from "../components/PeopleSection.astro";
 import peopleByCategory from "../data/people.json";
 import newsItems from "../data/news.json";
 import { marked } from "marked";
@@ -14,14 +15,6 @@ import dotsSmall from "../assets/3x4bluedots.svg";
 import dotsLarge from "../assets/4x7grydots.svg";
 import triangleSmall from "../assets/lilredtriangle.svg";
 import triangleLarge from "../assets/biggrntri.svg";
-
-const CATEGORY_NAMES = {
-  pis: "Faculty",
-  postdocs: "Postdocs",
-  phds: "PhD Students",
-  students: "Students",
-  collaborators: "Collaborators",
-};
 ---
 
 <Base>
@@ -76,70 +69,7 @@ const CATEGORY_NAMES = {
   <section class="people">
     <div class="content-width">
       <h2 class="people__title">People</h2>
-
-      <!-- Combined Faculty and Postdocs section -->
-      <div class="people__combined-section">
-        {
-          ["pis", "postdocs"].map((category) => (
-            <div class="people__subsection">
-              <h3 class="people__subheading">
-                {CATEGORY_NAMES[category as keyof typeof CATEGORY_NAMES]}
-              </h3>
-              <div class="people__cards-subsection">
-                {peopleByCategory[
-                  category as keyof typeof peopleByCategory
-                ].map((person) => (
-                  <a
-                    class="profile-card"
-                    href={person.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      class="headshot"
-                      src={`${import.meta.env.BASE_URL}${person.picture}`}
-                    />
-                    <div class="card-body flex-grow">
-                      <h4 class="f-large">{person.name}</h4>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))
-        }
-      </div>
-
-      <!-- PhD Students -->
-      {
-        Object.entries(CATEGORY_NAMES)
-          .filter(([category, _]) => category === "phds")
-          .map(([category, name]) => (
-            <>
-              <h3 class="people__subheading">{name}</h3>
-              <div class="people__cards">
-                {peopleByCategory[
-                  category as keyof typeof peopleByCategory
-                ].map((person) => (
-                  <a
-                    class="profile-card"
-                    href={person.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      class="headshot"
-                      src={`${import.meta.env.BASE_URL}${person.picture}`}
-                    />
-                    <div class="card-body flex-grow">
-                      <h4 class="f-large">{person.name}</h4>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </>
-          ))
-      }
+      <PeopleSection peopleByCategory={peopleByCategory} />
     </div>
   </section>
 </Base>

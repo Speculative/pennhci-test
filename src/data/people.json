@@ -96,7 +96,21 @@
       "website": "https://www.linkedin.com/in/xiaorui-liu-7993a826b/"
     }
   ],
-  "alumni": [],
-  "students": [],
+  "alumni": [
+    {
+      "name": "Harrison Goldstein",
+      "website": "https://harrisongoldste.in/"
+    }
+  ],
+  "students": [
+    {
+      "name": "Zain Khan",
+      "website": "https://www.linkedin.com/in/zain-khan-upenncs/"
+    },
+    {
+      "name": "Eric Dai",
+      "website": "https://www.linkedin.com/in/daieric/"
+    }
+  ],
   "collaborators": []
 }

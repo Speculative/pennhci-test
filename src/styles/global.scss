@@ -8,20 +8,6 @@
   --dark-gray: #484848;
   --white: #fff;
   --interaction-em: 10.5; /* approximate em width of the word "Interaction" at 1em in Roboto */
-
-  /* People cards configuration */
-  --content-max-width: 1140px;
-  --profile-card-width: 200px;
-  --cards-per-row-main: 5;
-
-  /* Calculate gap based on container width: (container_width - cards * card_width) / (cards - 1) */
-  --profile-card-gap: calc(
-    (
-        min(var(--content-max-width), 100vw) - var(--cards-per-row-main) *
-          var(--profile-card-width)
-      ) /
-      (var(--cards-per-row-main) - 1)
-  );
 }
 
 * {
@@ -179,51 +165,6 @@ nav {
   color: var(--white);
 }
 
-.profile-card {
-  border: 1px solid var(--light-gray);
-  border-radius: 12px;
-  background-color: var(--white);
-  color: var(--dark-gray);
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow:
-    0 2px 8px rgb(0 0 0 / 8%),
-    0 1px 3px rgb(0 0 0 / 6%);
-  transition: box-shadow 150ms ease;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-
-  &:hover {
-    box-shadow:
-      0 6px 20px rgb(0 0 0 / 12%),
-      0 3px 8px rgb(0 0 0 / 10%);
-  }
-
-  .headshot {
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    width: 100%;
-    flex-shrink: 0;
-    display: block;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
-
-  .card-body {
-    flex: 1;
-    padding: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-
-    p {
-      font-size: 0.875rem;
-    }
-  }
-}
-
 main {
   margin-left: auto;
   margin-right: auto;
@@ -237,96 +178,6 @@ hr {
   border-radius: 9999px;
 }
 
-/* People page */
-.people-page__container {
-  margin-top: 3rem;
-}
-
-.people-page__title {
-  color: var(--denim);
-  text-transform: lowercase;
-}
-
-.people-page__subtitle {
-  font-size: 1.5rem;
-  color: var(--dark-gray);
-}
-
-.people-page__group-title {
-  margin-top: 0.75rem;
-  margin-bottom: 0.25rem;
-  color: var(--dark-gray);
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* People cards containers */
-.people__cards {
-  display: grid;
-  grid-template-columns: repeat(
-    var(--cards-per-row-main),
-    var(--profile-card-width)
-  );
-  grid-auto-rows: 1fr;
-  gap: var(--profile-card-gap);
-  margin-top: 1rem; /* index section spacing */
-  padding-bottom: 3rem;
-}
-
-/* Combined Faculty and Postdocs section on home page */
-.people__combined-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.people__subsection {
-  min-width: 0; /* Allow grid items to shrink below content size */
-}
-
-.people__cards-subsection {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, var(--profile-card-width));
-  grid-auto-rows: 1fr;
-  gap: var(--profile-card-gap);
-  margin-top: 1rem;
-}
-
-.people-page__cards {
-  display: grid;
-  grid-template-columns: repeat(
-    var(--cards-per-row-main),
-    var(--profile-card-width)
-  );
-  grid-auto-rows: 1fr;
-  gap: var(--profile-card-gap);
-  margin-top: 3rem; /* page section spacing */
-  padding-bottom: 3rem;
-}
-
-/* Combined Faculty and Postdocs section */
-.people-page__combined-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.people-page__subsection {
-  min-width: 0; /* Allow grid items to shrink below content size */
-}
-
-.people-page__cards-subsection {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, var(--profile-card-width));
-  grid-auto-rows: 1fr;
-  gap: var(--profile-card-gap);
-  margin-top: 1rem;
-}
-
 /* Courses page */
 .courses-page__container {
   margin-top: 3rem;
@@ -334,19 +185,6 @@ hr {
 
 /* Mobile overrides */
 @media (width <= 1023px) {
-  :root {
-    /* Recalculate gap accounting for mobile padding (2rem total) */
-    --profile-card-gap: calc(
-      (
-          min(var(--content-max-width), 100vw - 2rem) - var(
-              --cards-per-row-main
-            ) *
-            var(--profile-card-width)
-        ) /
-        (var(--cards-per-row-main) - 1)
-    );
-  }
-
   /* Typography */
   h1 {
     font-size: 3rem; /* smaller hero/title on mobile */
@@ -391,22 +229,6 @@ hr {
   }
 
   /* Cards / lists */
-
-  /* Use two-column grid on mobile */
-  .people__cards,
-  .people-page__cards,
-  .people__cards-subsection,
-  .people-page__cards-subsection {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  /* Stack Faculty and Postdocs vertically on mobile */
-  .people__combined-section,
-  .people-page__combined-section {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
 
   .publications-page__list {
     margin-top: 1.25rem;

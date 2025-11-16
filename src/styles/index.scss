@@ -1,3 +1,5 @@
+@use "./people.scss";
+
 .home-hero {
   margin-top: 20px;
   position: relative;
@@ -154,15 +156,6 @@
     }
   }
 
-  .people {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-
-    &__subtitle {
-      font-size: 1.125rem;
-    }
-  }
-
   .news {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -179,29 +172,6 @@
     &__shapes {
       display: none;
     }
-  }
-}
-
-.people {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  background: var(--white);
-
-  &__title {
-    color: var(--denim);
-    text-transform: lowercase;
-  }
-
-  &__subtitle {
-    font-size: 1.5rem;
-  }
-
-  &__subheading {
-    margin-top: 0.75rem;
-    margin-bottom: 0.25rem;
-    color: var(--dark-gray);
-    font-size: 1rem;
-    font-weight: 600;
   }
 }
 

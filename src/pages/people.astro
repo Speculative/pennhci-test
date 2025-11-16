@@ -1,14 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
+import PeopleSection from "../components/PeopleSection.astro";
 import peopleByCategory from "../data/people.json";
-
-const CATEGORY_NAMES = {
-  pis: "Faculty",
-  postdocs: "Postdocs",
-  phds: "PhD Students",
-  students: "Students",
-  collaborators: "Collaborators",
-};
+import "../styles/people.scss";
 ---
 
 <Base title="People">
@@ -17,76 +11,10 @@ const CATEGORY_NAMES = {
       <h2 class="people-page__title">People</h2>
     </div>
 
-    <!-- Combined Faculty and Postdocs section -->
-    <div class="people-page__combined-section content-width">
-      {
-        ["pis", "postdocs"].map((category) => (
-          <div class="people-page__subsection">
-            <h3 class="people-page__group-title">
-              {CATEGORY_NAMES[category as keyof typeof CATEGORY_NAMES]}
-            </h3>
-            <div class="people-page__cards-subsection">
-              {peopleByCategory[category as keyof typeof peopleByCategory].map(
-                (person) => (
-                  <a
-                    class="profile-card"
-                    href={person.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      class="headshot"
-                      src={`${import.meta.env.BASE_URL}${person.picture}`}
-                    />
-                    <div class="card-body flex-grow">
-                      <h4 class="f-large">{person.name}</h4>
-                      <p>
-                        {person.role}, {person.affiliation}
-                      </p>
-                    </div>
-                  </a>
-                ),
-              )}
-            </div>
-          </div>
-        ))
-      }
-    </div>
-
-    <!-- Other categories -->
-    {
-      Object.entries(CATEGORY_NAMES)
-        .filter(([category]) => category !== "pis" && category !== "postdocs")
-        .map(([category, name]) => (
-          <>
-            <div class="content-width">
-              <h3 class="people-page__group-title">{name}</h3>
-            </div>
-            <div class="people-page__cards content-width">
-              {peopleByCategory[category as keyof typeof peopleByCategory].map(
-                (person) => (
-                  <a
-                    class="profile-card"
-                    href={person.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      class="headshot"
-                      src={`${import.meta.env.BASE_URL}${person.picture}`}
-                    />
-                    <div class="card-body flex-grow">
-                      <h4 class="f-large">{person.name}</h4>
-                      <p>
-                        {person.role}, {person.affiliation}
-                      </p>
-                    </div>
-                  </a>
-                ),
-              )}
-            </div>
-          </>
-        ))
-    }
+    <PeopleSection
+      peopleByCategory={peopleByCategory}
+      classPrefix="people-page"
+      wrapSections={true}
+    />
   </section>
 </Base>
