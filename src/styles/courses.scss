@@ -1,4 +1,60 @@
+.courses-page__container {
+  position: relative;
+}
+
 .courses-page__title {
   color: var(--navy);
   text-transform: lowercase;
+}
+
+.courses-page__shapes {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  height: 300px;
+
+  div {
+    position: absolute;
+    transition:
+      top 0.5s ease-out,
+      right 0.5s ease-out;
+  }
+
+  &:hover {
+    .courses-page__shapes__circle {
+      right: -20px;
+      top: 90px;
+    }
+
+    .courses-page__shapes__triangle {
+      right: -50px;
+      top: 0;
+    }
+
+    .courses-page__shapes__dots {
+      right: -110px;
+      top: 190px;
+    }
+  }
+
+  &__circle {
+    height: 87px;
+    width: 87px;
+    top: 55px;
+    right: -70px;
+  }
+
+  &__triangle {
+    height: 494px;
+    width: 295px;
+    right: -100px;
+    top: 20px;
+  }
+
+  &__dots {
+    height: 130px;
+    width: 270px;
+    top: 150px;
+    right: -50px;
+  }
 }

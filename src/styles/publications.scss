@@ -1,5 +1,6 @@
 .publications-page__container {
   margin-top: 3rem;
+  position: relative;
 }
 
 .publications-page__title {
@@ -14,6 +15,57 @@
 
 .publications-page__list {
   margin-top: 2rem;
+}
+
+.publications-page__shapes {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  height: 300px;
+
+  div {
+    position: absolute;
+    transition:
+      top 0.5s ease-out,
+      right 0.5s ease-out;
+  }
+
+  &:hover {
+    .publications-page__shapes__dots {
+      top: 100px;
+    }
+
+    .publications-page__shapes__circle--small {
+      right: 140px;
+      top: 100px;
+    }
+
+    .publications-page__shapes__circle--large {
+      right: -200px;
+      top: 20px;
+    }
+  }
+
+  &__dots {
+    height: 73px;
+    width: 85px;
+    top: 0;
+    right: 70px;
+  }
+
+  &__circle--small {
+    height: 113px;
+    width: 113px;
+    top: 120px;
+    right: 80px;
+  }
+
+  &__circle--large {
+    height: 293px;
+    width: 293px;
+    right: -150px;
+    top: 60px;
+  }
 }
 
 .publication {
