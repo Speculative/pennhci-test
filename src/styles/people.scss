@@ -54,8 +54,9 @@
     flex-direction: column;
     min-height: 0;
 
-    p {
-      font-size: 0.875rem;
+    h4 {
+      font-size: 1rem;
+      font-weight: 400;
     }
   }
 }
@@ -79,7 +80,7 @@
     margin-top: 0.75rem;
     margin-bottom: 0.25rem;
     color: var(--dark-gray);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
   }
 
@@ -88,6 +89,7 @@
     margin-bottom: 2rem;
     padding-left: 1.5rem;
     list-style-type: disc;
+    font-size: 1rem;
 
     li {
       margin-bottom: 0.25rem;
