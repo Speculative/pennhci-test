@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["stylelint-config-standard-scss", "stylelint-config-html"],
+  extends: ["stylelint-config-html"],
   overrides: [
     {
       files: ["**/*.astro"],
