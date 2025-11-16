@@ -10,7 +10,6 @@
 
 .courses-page__list {
   margin-top: 2rem;
-  padding-right: 400px;
 }
 
 .course-card {
@@ -25,6 +24,8 @@
   box-shadow:
     0 1px 3px rgb(0 0 0 / 6%),
     0 1px 2px rgb(0 0 0 / 4%);
+  position: relative;
+  z-index: 1;
 
   &__code {
     display: flex;
@@ -95,9 +96,10 @@
 
 .courses-page__shapes {
   position: absolute;
-  top: -50px;
-  right: 0;
+  top: -100px;
+  right: -100px;
   height: 300px;
+  z-index: 0;
 
   div {
     position: absolute;

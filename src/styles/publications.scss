@@ -19,9 +19,10 @@
 
 .publications-page__shapes {
   position: absolute;
-  top: 10px;
-  right: 0;
+  top: -20px;
+  right: -40px;
   height: 300px;
+  z-index: 0;
 
   div {
     position: absolute;
@@ -49,7 +50,7 @@
   &__dots {
     height: 73px;
     width: 85px;
-    top: 0;
+    top: 20px;
     right: 70px;
   }
 
@@ -72,23 +73,43 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  box-shadow:
+    0 1px 3px rgb(0 0 0 / 6%),
+    0 1px 2px rgb(0 0 0 / 4%);
+  position: relative;
+  z-index: 1;
 
   &__image {
     max-width: 15rem;
     aspect-ratio: 16 / 9;
     object-fit: contain;
+    flex-shrink: 0;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    gap: 0.5rem;
   }
 
   &__title {
     font-size: 1.5rem;
+    color: var(--dark-gray);
+  }
+
+  &__authors {
+    color: var(--dark-gray);
+  }
+
+  &__venue {
+    color: var(--dark-gray);
   }
 
   &__pdf {
@@ -108,12 +129,14 @@
 
   .publications-page__list {
     margin-top: 0;
+    padding-right: 1rem;
   }
 
   .publication {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    padding: 1rem;
 
     &__image {
       max-width: 100%;
