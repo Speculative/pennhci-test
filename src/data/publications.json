@@ -14,5 +14,12 @@
     "year": 2025,
     "pdf": "/papers/chi21-scholarphi.pdf",
     "image": "/papers/chi21-scholarphi.png"
+  },
+  {
+    "title": "Auditing the Audits: Lessons for Algorithmic Accountability from Local Law 144's Bias Audits",
+    "authors": "Marissa Kumar Gerchick, Ro Encarnación, Cole Tanigawa-Lau, Lena Armstrong, Ana Gutiérrez, Danaé Metaxa",
+    "venue": "FAccT",
+    "year": 2025,
+    "pdf": "/papers/facct25-auditingaudits.pdf"
   }
 ]
