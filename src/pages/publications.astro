@@ -1,18 +1,99 @@
 ---
 import Base from "../layouts/Base.astro";
 import publications from "../data/publications.json";
+import people from "../data/people.json";
 
 import "../styles/publications.scss";
 
 import dots from "../assets/4x4grydots.svg";
 import circleSmall from "../assets/lilredcircle.svg";
 import circleLarge from "../assets/biggrncircle.svg";
+
+// Extract lab members organized by category
+const postdocs = people.postdocs.map((p) => p.name).sort();
+const phds = people.phds.map((p) => p.name).sort();
+const alumni = people.alumni.map((p) => p.name).sort();
+
+const piNames = people.pis.map((p) => p.name).sort();
+
+// Extract unique venues and years
+const venues = [...new Set(publications.map((p) => p.venue))].sort();
+const years = [...new Set(publications.map((p) => p.year))].sort(
+  (a, b) => b - a,
+);
 ---
 
 <Base title="Publications">
   <section class="publications-page">
     <div class="publications-page__container content-width">
       <h2 class="publications-page__title">Publications</h2>
+
+      <div class="publications-page__filters">
+        <div class="filter-group">
+          <label for="filter-author">Author:</label>
+          <select id="filter-author">
+            <option value="">All Authors</option>
+
+            {
+              postdocs.length > 0 && (
+                <>
+                  <option disabled>─────── Postdocs ───────</option>
+                  {postdocs.map((name) => (
+                    <option value={name}>{name}</option>
+                  ))}
+                </>
+              )
+            }
+
+            {
+              phds.length > 0 && (
+                <>
+                  <option disabled>──────── PhDs ────────</option>
+                  {phds.map((name) => (
+                    <option value={name}>{name}</option>
+                  ))}
+                </>
+              )
+            }
+
+            {
+              alumni.length > 0 && (
+                <>
+                  <option disabled>─────── Alumni ───────</option>
+                  {alumni.map((name) => (
+                    <option value={name}>{name}</option>
+                  ))}
+                </>
+              )
+            }
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-venue">Venue:</label>
+          <select id="filter-venue">
+            <option value="">All Venues</option>
+            {venues.map((venue) => <option value={venue}>{venue}</option>)}
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-year">Year:</label>
+          <select id="filter-year">
+            <option value="">All Years</option>
+            {years.map((year) => <option value={year}>{year}</option>)}
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-pi">PI:</label>
+          <select id="filter-pi">
+            <option value="">All PIs</option>
+            {piNames.map((name) => <option value={name}>{name}</option>)}
+          </select>
+        </div>
+      </div>
+
       <div class="publications-page__shapes">
         <div class="publications-page__shapes__dots">
           <img src={dots.src} />
@@ -29,12 +110,37 @@ import circleLarge from "../assets/biggrncircle.svg";
     <div class="publications-page__list content-width">
       {
         publications.map((pub) => (
-          <div class="publication">
-            {pub.image && (
+          <div
+            class="publication"
+            data-authors={pub.authors}
+            data-venue={pub.venue}
+            data-year={pub.year}
+          >
+            {pub.image ? (
               <img
                 class="publication__image"
                 src={`${import.meta.env.BASE_URL}${pub.image}`}
               />
+            ) : (
+              <div
+                class="publication__image publication__image--placeholder"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="8" y1="13" x2="16" y2="13" />
+                  <line x1="8" y1="17" x2="16" y2="17" />
+                  <line x1="8" y1="9" x2="10" y2="9" />
+                </svg>
+              </div>
             )}
             <div class="publication__content">
               <div class="publication__title">{pub.title}</div>
@@ -56,3 +162,69 @@ import circleLarge from "../assets/biggrncircle.svg";
     </div>
   </section>
 </Base>
+
+<script>
+  // Get filter elements
+  const filterAuthor = document.getElementById(
+    "filter-author",
+  ) as HTMLSelectElement;
+  const filterVenue = document.getElementById(
+    "filter-venue",
+  ) as HTMLSelectElement;
+  const filterYear = document.getElementById(
+    "filter-year",
+  ) as HTMLSelectElement;
+  const filterPI = document.getElementById("filter-pi") as HTMLSelectElement;
+
+  // Function to filter publications
+  function filterPublications() {
+    const selectedAuthor = filterAuthor.value;
+    const selectedVenue = filterVenue.value;
+    const selectedYear = filterYear.value;
+    const selectedPI = filterPI.value;
+
+    const publications = document.querySelectorAll(".publication");
+
+    publications.forEach((pub) => {
+      const pubElement = pub as HTMLElement;
+      const authors = pubElement.dataset.authors || "";
+      const venue = pubElement.dataset.venue || "";
+      const year = pubElement.dataset.year || "";
+
+      let show = true;
+
+      // Filter by author (check if selected author appears in authors list)
+      if (selectedAuthor && !authors.includes(selectedAuthor)) {
+        show = false;
+      }
+
+      // Filter by venue
+      if (selectedVenue && venue !== selectedVenue) {
+        show = false;
+      }
+
+      // Filter by year
+      if (selectedYear && year !== selectedYear) {
+        show = false;
+      }
+
+      // Filter by PI (check if selected PI appears in authors list)
+      if (selectedPI && !authors.includes(selectedPI)) {
+        show = false;
+      }
+
+      // Show or hide publication
+      if (show) {
+        pubElement.style.display = "";
+      } else {
+        pubElement.style.display = "none";
+      }
+    });
+  }
+
+  // Add event listeners to all filters
+  filterAuthor.addEventListener("change", filterPublications);
+  filterVenue.addEventListener("change", filterPublications);
+  filterYear.addEventListener("change", filterPublications);
+  filterPI.addEventListener("change", filterPublications);
+</script>
