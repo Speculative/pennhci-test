@@ -33,13 +33,6 @@
   ],
   "phds": [
     {
-      "name": "Alyssa Hwang",
-      "role": "PhD Student",
-      "affiliation": "University of Pennsylvania",
-      "picture": "/people/alyssa_hwang.png",
-      "website": "https://alyssahwang.com/"
-    },
-    {
       "name": "Jessica Shi",
       "role": "PhD Student",
       "affiliation": "University of Pennsylvania",
@@ -100,10 +93,14 @@
       "role": "PhD Student",
       "affiliation": "University of Pennsylvania",
       "picture": "/people/xiaorui_liu.jpg",
-      "website": "https://www.linkedin.com/in/xiaorui-liu-7993a826b/"
+      "website": "https://xiaoruiyliu.github.io/"
     }
   ],
   "alumni": [
+    {
+      "name": "Alyssa Hwang",
+      "website": "https://alyssahwang.com/"
+    },
     {
       "name": "Harrison Goldstein",
       "website": "https://harrisongoldste.in/"

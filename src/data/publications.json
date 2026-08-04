@@ -19,28 +19,21 @@
     "authors": "Megha N. Govindu, Stephanie Wang, Sorelle Friedler, Danaé Metaxa",
     "venue": "FAccT",
     "year": 2026,
-    "pdf": "#NEEDS_INVESTIGATION"
+    "pdf": "/papers/facct26-bechdel-test.pdf"
   },
   {
     "title": "Auditing LLM Responses in a Complex Policy Landscape: Abortion Law in the United States",
     "authors": "Ro Encarnación, Christen Hammock Jones, Danaé Metaxa",
     "venue": "FAccT",
     "year": 2026,
-    "pdf": "#NEEDS_INVESTIGATION"
+    "pdf": "/papers/facct26-auditing-llm-abortion-law.pdf"
   },
   {
     "title": "Everyday Auditing of TikTok's Generative AI Manga Filter",
     "authors": "Ro Encarnación, Luis Morales-Navarro, Hita Kambhamettu, Danaé Metaxa",
     "venue": "FAccT",
     "year": 2026,
-    "pdf": "#NEEDS_INVESTIGATION"
-  },
-  {
-    "title": "Integrating Community Knowledge into Electronic Health Records: Reimagining Childhood Asthma Care",
-    "authors": "Aviv Landau, Hita Kambhamettu, Anthonia Odartei, Levia Sutton, Sonya Sanders, Andrew Head, Kenrick Cato",
-    "venue": "SSWR",
-    "year": 2026,
-    "pdf": "#NEEDS_INVESTIGATION"
+    "pdf": "/papers/facct26-everyday-auditing-manga-filter.pdf"
   },
   {
     "title": "Answering Developer Questions with Annotated Agent-Discovered Program Traces",
@@ -155,7 +148,7 @@
     "authors": "Stephanie Wang, Shengchun Huang, Alvin Zhou, Danaé Metaxa",
     "venue": "CSCW",
     "year": 2024,
-    "pdf": "#NEEDS_INVESTIGATION",
+    "pdf": "/papers/cscw24-lower-quantity-higher-quality.pdf",
     "image": "/papers/cscw24-twitter-timelines.png"
   },
   {
