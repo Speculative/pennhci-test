@@ -1,14 +1,6 @@
 [
   {
-    "date": "2025-10-18",
-    "content": "Test of a paper link: [FreeForm](./papers/chi25-freeform.pdf)"
-  },
-  {
-    "date": "2025-09-15",
-    "content": "This is where other news would go!"
-  },
-  {
-    "date": "2025-09-01",
-    "content": "Penn HCI website launched — our new lab website is live with people, publications, and courses."
+    "date": "2026-06-25",
+    "content": "Our group has [3 papers](/publications?venue=FAccT&year=2026) at FAccT 2026!"
   }
 ]

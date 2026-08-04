@@ -4,17 +4,20 @@ import PeopleSection from "../components/PeopleSection.astro";
 import peopleByCategory from "../data/people.json";
 import newsItems from "../data/news.json";
 import { marked } from "marked";
-
-const renderedNews = newsItems.map((item) => ({
-  ...item,
-  html: marked.parse(item.content),
-}));
 import "../styles/index.scss";
-
 import dotsSmall from "../assets/3x4bluedots.svg";
 import dotsLarge from "../assets/4x7grydots.svg";
 import triangleSmall from "../assets/lilredtriangle.svg";
 import triangleLarge from "../assets/biggrntri.svg";
+
+const baseUrl = import.meta.env.BASE_URL;
+const base = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
+
+const renderedNews = newsItems.map((item) => {
+  const raw = marked.parse(item.content) as string;
+  const html = base ? raw.split('href="/').join('href="' + base + "/") : raw;
+  return { ...item, html };
+});
 ---
 
 <Base>
